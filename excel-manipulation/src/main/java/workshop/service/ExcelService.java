@@ -1,11 +1,9 @@
 package workshop.service;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
-import workshop.entity.Customer;
+import workshop.component.ExcelReader;
 
 @Slf4j
 @Service
@@ -17,10 +15,10 @@ public class ExcelService {
 		this.readExcel = readExcel;
 	}
 
-	public void start() {
+	public void start() throws Exception {
 		log.info("start() method called");
-		List<Customer> customers = readExcel.getAllCustomers();
-		log.info("custmers size: {}", customers.size());
-	}
 
+		// readExcel.getAllCustomersUsingWorkbookFactory();
+		readExcel.getAllCustomersusingStream();
+	}
 }
