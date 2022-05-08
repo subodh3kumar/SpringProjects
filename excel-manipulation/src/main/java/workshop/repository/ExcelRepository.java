@@ -6,14 +6,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import lombok.extern.slf4j.Slf4j;
 import workshop.entity.Customer;
 
-@Slf4j
 @Repository
 public class ExcelRepository {
+
+	private static final Logger log = LoggerFactory.getLogger(ExcelRepository.class);
 
 	private EntityManagerFactory emf;
 

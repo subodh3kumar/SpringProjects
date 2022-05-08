@@ -27,16 +27,18 @@ import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import lombok.extern.slf4j.Slf4j;
 import workshop.entity.Customer;
 import workshop.repository.ExcelRepository;
 
-@Slf4j
 @Component
 public class ExcelReader {
 
+	private static final Logger log = LoggerFactory.getLogger(ExcelReader.class);
+	
 	private static final String CUSTOMER_EXCEL_PATH = "C:/Development/Files/Input/Excel/Customers.xlsx";
 
 	private ExcelRepository repository;

@@ -9,17 +9,18 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.monitorjbl.xlsx.StreamingReader;
 
-import lombok.extern.slf4j.Slf4j;
 import workshop.model.Shipper;
 
-@Slf4j
 @Service
 public class ExcelService {
 
+	private static final Logger log = LoggerFactory.getLogger(ExcelService.class);
 	private static final String SHIPPERSR_EXCEL_PATH = "/Development/Files/Input/Excel/Shippers.xlsx";
 
 	public void start() throws Exception {
